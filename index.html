@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
     <script>
         let reasonable_things = [
             "sunglasses",
@@ -86,12 +86,12 @@
                 }
             }
             n += 1;
-            document.cookie = "loaded=" + n;
+            document.cookie = "loaded=" + n + "; SameSite=Lax";
             return n;
         }
 
         function resetLoadCount() {
-            document.cookie = "loaded=0";
+            document.cookie = "loaded=0; SameSite=Lax";
         }
 
         window.onload = function() {
