@@ -1,0 +1,126 @@
+<html>
+    <script>
+        let reasonable_things = [
+            "sunglasses",
+            "chapstick",
+            "rain jacket",
+            "toothbrush",
+            "meds",
+            "headphones",
+            "chargers",
+            "swimsuit",
+            "mask",
+            "snacky snacks"
+        ];
+
+        let kinda_weird = [
+            "reading glasses",
+            "EXTRA extra socks",
+            "did you pack enough socks",
+            "maybe an extra pair of socks",
+            "ukelele",
+            "calcium supplements",
+            "spray paint (IN CHECKED BAGGAGE ONLY)",
+            "snorkel",
+            "microplane",
+            "Machiavelli's \"The Prince\" (for light reading)",
+            "a set of free weights",
+            "a fire extinguisher",
+            "liquids over 3oz",
+            "postcard stamps",
+            "plaid shirt",
+            "pool floaties",
+            "SEVERAL puzzle pieces, at least",
+            "sunscreen remover",
+            "a recorder",
+            "printed directions to your hotel",
+            "a tablespoon",
+            "helmet",
+            "foaming hand soap",
+            "coasters",
+            "surf board",
+            "ganache",
+            "turpentine"
+        ];
+
+        let really_weird = [
+            "an oyster shucking knife",
+            "atlatl",
+            "your sense of self",
+            "air bubbles",
+            "feldspar",
+            "a keycap remover",
+            "your TY beanie baby collection that will one day be extremely valuable",
+            "your riding lawnmower",
+            "your plants (they'll die if you don't water them! take them with you!)",
+            "a loom",
+            "a shield",
+            "short grain rice",
+            "a tophat",
+            "a space suit",
+            "a couple 2x4s",
+            "extra sheets of gold leaf",
+            "tax forms",
+            "a soldering iron",
+            "all the equipment that you may need to maintain an autonomous underwater robot",
+            "ophicleide",
+            "a welcome mat",
+            "string lights",
+            "pesticide",
+            "vegan egg substitute",
+            "portable music stand",
+            "a bubble making machine",
+            "an ironing board",
+            "a pipette",
+            "chain grease",
+            "bike peddle wrench"
+        ];
+
+        function incLoaded() {
+            var n = 0;
+            for (c of decodeURIComponent(document.cookie).split(";")) {
+                let [k, v] = c.split("=");
+                if(k == "loaded") {
+                    n = parseInt(v);
+                    break;
+                }
+            }
+            n += 1;
+            document.cookie = "loaded=" + n;
+            return n;
+        }
+
+        function resetLoadCount() {
+            document.cookie = "loaded=0";
+        }
+
+        window.onload = function() {
+            n = incLoaded();
+            console.log("Loaded " + n + " times");
+
+            var items = reasonable_things;
+            if(n > 3) {
+                items = kinda_weird;
+            }
+            if(n > 6) {
+                items = really_weird;
+            }
+
+            let item = items[Math.floor(Math.random()*items.length)]
+
+            document.getElementById("item").textContent = item;
+        }
+    </script>
+
+    <body>
+        <center>
+            <h1>
+                <br><br>
+                You forgot ...<br>
+            </h1>
+            <h2 id="item">
+                EXTRA extra socks
+            </h2>
+        </center>
+    </body>
+</html>
