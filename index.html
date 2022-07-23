@@ -1,54 +1,62 @@
 <!DOCTYPE html>
     <script>
         let reasonable_things = [
-            "sunglasses",
-            "chapstick",
-            "rain jacket",
-            "toothbrush",
-            "meds",
-            "headphones",
-            "chargers",
-            "swimsuit",
-            "mask",
-            "snacky snacks"
+            "your sunglasses",
+            "your chapstick",
+            "your rain jacket",
+            "your toothbrush",
+            "your meds",
+            "your headphones",
+            "your chargers",
+            "your swimsuit",
+            "your mask",
+            "snacky snacks",
+            "your underpants",
+            "your wallet",
+            "deodorant",
+            "that adapter that you need to plug your stuff into the wall in Chile",
+            "your passport",
+            "your comfy shoes",
+            "ca$h"
         ];
 
-        let kinda_weird = [
-            "reading glasses",
-            "EXTRA extra socks",
+        let weird = [
+            "all your favorite teas",
+            "your sense of adventure",
+            "your sense of impending doom",
+            "your reading glasses",
+            "your EXTRA extra socks",
             "did you pack enough socks",
             "maybe an extra pair of socks",
-            "ukelele",
-            "calcium supplements",
+            "your ukelele",
+            "your calcium supplements",
             "spray paint (IN CHECKED BAGGAGE ONLY)",
-            "snorkel",
-            "microplane",
+            "a snorkel",
+            "your microplane",
             "Machiavelli's \"The Prince\" (for light reading)",
             "a set of free weights",
             "a fire extinguisher",
             "liquids over 3oz",
             "postcard stamps",
-            "plaid shirt",
+            "a plaid shirt",
             "pool floaties",
             "SEVERAL puzzle pieces, at least",
             "sunscreen remover",
             "a recorder",
+            "some spare CNAME records",
             "printed directions to your hotel",
             "a tablespoon",
-            "helmet",
+            "a helmet",
             "foaming hand soap",
             "coasters",
-            "surf board",
+            "a surf board",
             "ganache",
-            "turpentine"
-        ];
-
-        let really_weird = [
+            "turpentine",
             "an oyster shucking knife",
-            "atlatl",
+            "your favorite atlatl",
             "your sense of self",
-            "air bubbles",
-            "feldspar",
+            "spare air bubbles",
+            "enough feldspar",
             "a keycap remover",
             "your TY beanie baby collection that will one day be extremely valuable",
             "your riding lawnmower",
@@ -60,20 +68,25 @@
             "a space suit",
             "a couple 2x4s",
             "extra sheets of gold leaf",
-            "tax forms",
+            "last year's tax forms",
             "a soldering iron",
-            "all the equipment that you may need to maintain an autonomous underwater robot",
-            "ophicleide",
+            "all the equipment that you need to maintain an autonomous underwater robot",
+            "your ophicleide",
             "a welcome mat",
             "string lights",
-            "pesticide",
+            "just a little bit of pesticide",
             "vegan egg substitute",
-            "portable music stand",
+            "your portable music stand",
             "a bubble making machine",
             "an ironing board",
             "a pipette",
             "chain grease",
-            "bike peddle wrench"
+            "your trusty bike peddle wrench",
+            "YOUR SENSE OF ANTICIPATION",
+            "your debugger",
+            "my address! For the postcard you are going to write me!",
+            "that thing they use to make the floor at the grocery store shiny",
+            "!!! your towel !!!"
         ];
 
         function incLoaded() {
@@ -99,11 +112,8 @@
             console.log("Loaded " + n + " times");
 
             var items = reasonable_things;
-            if(n > 3) {
-                items = kinda_weird;
-            }
             if(n > 6) {
-                items = really_weird;
+                items = weird;
             }
 
             let item = items[Math.floor(Math.random()*items.length)]
